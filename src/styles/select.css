@@ -1,0 +1,40 @@
+.select-container {
+  position: relative;
+  width: max-content;
+  margin: 5rem auto 2.5rem;
+}
+.select-title {
+  width: max-content;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  color: #5f5f5f;
+  transform: translateY(-50%) translateX(-50%);
+  pointer-events: none;
+  transition: 300ms ease transform;
+}
+.select-title.showValue {
+  transform: translateY(-200%) translateX(-50%);
+}
+.select-input {
+  width: 180px;
+  padding: 0.5rem;
+  color: #3e3e3e;
+  font-family: "Roboto";
+  border: 2px solid #a6a6a6;
+  border-radius: 2px;
+  outline: none;
+}
+
+@media screen and (min-width: 768px) {
+  .select-container {
+    margin: 4rem 12rem 2rem;
+  }
+  .select-title {
+    left: 1.2rem;
+    transform: translateY(-50%);
+  }
+  .select-title.showValue {
+    transform: translateY(-200%) translateX(-0.5rem);
+  }
+}

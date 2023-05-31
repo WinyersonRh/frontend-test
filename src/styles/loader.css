@@ -1,0 +1,19 @@
+@keyframes loader {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.loader {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  margin: 0 auto;
+  border-radius: 50%;
+  border: 0.25rem solid;
+  border-color: var(--azure-blue-alpha) #ccc var(--azure-blue-alpha) var(--azure-blue-alpha);
+  animation: 1s infinite linear loader;
+}

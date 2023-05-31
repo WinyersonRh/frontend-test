@@ -1,0 +1,41 @@
+.posts-container {
+  width: 80%;
+  margin: 4rem auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3rem;
+  row-gap: 2.5rem;
+}
+
+.empty-message {
+  width: max-content;
+  margin: 2rem auto;
+  border-radius: 4px;
+  font-size: 1.5rem;
+  text-align: center;
+  color: var(--brownish-grey);
+  grid-column: span 2;
+  pointer-events: none;
+  opacity: 0.6;
+}
+
+@media screen and (min-width: 500px) {
+  .posts-container {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .posts-container {
+    width: 70%;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  .posts-container {
+    width: 80%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
