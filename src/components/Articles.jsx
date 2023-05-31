@@ -8,7 +8,7 @@ import Post from "./Post";
 // TITLE: INITIAL STATES
 const initialFavorites = [];
 
-export default function Articles({ section, posts, postToCall }) {
+export default function Articles({ section, posts, tech }) {
   // > List of Favorites
   const [favorites, setFavorites] = useState(initialFavorites);
 
@@ -47,6 +47,7 @@ export default function Articles({ section, posts, postToCall }) {
     <section className="posts-container">
       {posts &&
         posts.map((data) => {
+          // If the section is favorites and this publication is in the local storage list we render it.
           if (section === "my-faves" && inFavorites(data.objectID) === "/svg/iconmonstr-favorite-2.svg") return;
 
           return (
@@ -59,7 +60,8 @@ export default function Articles({ section, posts, postToCall }) {
             />
           );
         })}
-      {!posts && !postToCall && <h3 className="empty-message">You do not have any post</h3>}
+      {/* If there are no posts or search technology, we display this message */}
+      {!posts && !tech && <h3 className="empty-message">You do not have any post</h3>}
     </section>
   );
 }

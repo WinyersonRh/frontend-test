@@ -5,11 +5,11 @@ import "../styles/select.css";
 
 // TITLE: INITIAL STATES
 
-export default function Form({ postToCall, setPostToCall }) {
+export default function Form({ tech, setTech }) {
   return (
     <div className="select-container">
-      <span className={`select-title ${postToCall && "showValue"}`}>Select your news</span>
-      <select id="select-tech" name="tech" onChange={(e) => setPostToCall(e.target.value)} className="select-input">
+      <span className={`select-title ${tech && "showValue"}`}>Select your news</span>
+      <select id="select-tech" name="tech" onChange={(e) => setTech(e.target.value)} className="select-input">
         <option defaultValue="" hidden></option>
         <option value="angular">Angular</option>
         <option value="reactjs">Reacts</option>

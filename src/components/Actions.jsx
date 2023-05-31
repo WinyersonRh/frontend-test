@@ -2,19 +2,17 @@
 import { useEffect } from "react";
 import "../styles/actions.css";
 
-// TITLE: COMPONENTS
-
-// TITLE: INITIAL STATES
-
 export default function Actions({ section, setSection }) {
   // Section in Local Storage
   const storedSection = window.localStorage.getItem("section");
 
+  // Store the selected section and set the state "section"
   const storeSection = (value) => {
     window.localStorage.setItem("section", value);
     setSection(value);
   };
 
+  // Check the selected section for button styles
   const isSection = (sectionBtn) => sectionBtn === section && "isSelected";
 
   useEffect(() => {

@@ -6,16 +6,20 @@ import "../styles/post.css";
 // TITLE: INITIAL STATES
 
 export default function Post({ data, section, inFavorites, storeFavorites }) {
+  // If the section is favorites and the post is not in favorites, do not render
   if (section === "my-faves" && !inFavorites) return;
 
+  // Destructuring of necessary data
   const { objectID, author, story_title, story_url, created_at } = data;
 
+  // Get "timeago" of posts
   const getTimeAgo = (date) => {
     const days = new Date(date).getDate(date);
     const hours = new Date(date).getHours(date);
     const minutes = new Date(date).getMinutes(date);
     const seconds = new Date(date).getSeconds(date);
 
+    // "Timeago" message by default but editable
     let timeago = "More than a month ago";
 
     if (days > 27 && days <= 31) timeago = "One month ago";
